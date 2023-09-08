@@ -5,7 +5,7 @@ from AnonXMusic import app
 import asyncio
 from pytgcalls import StreamType
 from pytgcalls.types.input_stream import AudioPiped
-from AnonXMusic.core.call import Anon
+from AnonXMusic.core.call import Anony 
 from AnonXMusic.utils.database import *
 from pytgcalls.exceptions import (NoActiveGroupCall,AlreadyJoinedError)
 
