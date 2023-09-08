@@ -5,8 +5,8 @@ from AnonXMusic import app
 import asyncio
 from pytgcalls import StreamType
 from pytgcalls.types.input_stream import AudioPiped
-from AnonX.core.call import Anon
-from AnonX.utils.database import *
+from AnonXMusic.core.call import Anon
+from AnonXMusic.utils.database import *
 from pytgcalls.exceptions import (NoActiveGroupCall,AlreadyJoinedError)
 
 chat = []
