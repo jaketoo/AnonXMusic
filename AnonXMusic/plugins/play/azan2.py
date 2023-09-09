@@ -18,7 +18,7 @@ import random
 async def strcall(client, message):
     assistant = await group_assistant(Anony, message.chat.id)
     try:
-        await assistant.join_group_call(message.chat.id, AudioPiped(".assets/azan.mp3"), stream_type=StreamType().pulse_stream)
+        await assistant.join_group_call(message.chat.id, AudioPiped("AnonXMusic/assets/azan.mp3"), stream_type=StreamType().pulse_stream)
     except NoActiveGroupCall:
         await message.reply(f"الكول مقفول اصلا يصاحبي")
     except TelegramServerError:
