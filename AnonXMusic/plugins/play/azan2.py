@@ -73,4 +73,6 @@ async def disable_prayer_times_command(client, message):
     else:
         await message.reply("الأذان معطل بالفعل لهذه المجموعة.")
 
-asyncio.create_task(play_prayer_times())
+@app.on_startup
+async def on_startup():
+    await play_prayer_times()
