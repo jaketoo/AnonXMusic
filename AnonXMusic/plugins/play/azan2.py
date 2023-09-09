@@ -44,7 +44,7 @@ async def play_prayer_times(message):
                     for chat_id in active_groups:
                         assistant = await group_assistant(Anony, message.chat.id)
                         try:
-                            await assistant.join_group_call(message.chat.id, AudioPiped("AnonXMusicazan.mp3"), stream_type=StreamType().pulse_stream)
+                            await assistant.join_group_call(message.chat.id, AudioPiped("AnonXMusic/assets/azan.mp3"), stream_type=StreamType().pulse_stream)
                             await send_prayer_notification(chat_id, prayer_name)
                         except NoActiveGroupCall:
                             await message.reply(f"الكول مقفول اصلا يصاحبي")
