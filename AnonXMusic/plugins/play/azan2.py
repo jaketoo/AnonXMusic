@@ -54,7 +54,7 @@ async def play_prayer_times(message):
                             pass
         await asyncio.sleep(300)
 
-@app.on_message(filters.command("تفعيل_الأذان") & filters.group)
+@app.on_message(filters.command("تفعيل الاذان", "") & filters.group)
 async def enable_prayer_times_command(client, message):
     chat_id = message.chat.id
     if chat_id not in active_groups:
@@ -63,7 +63,7 @@ async def enable_prayer_times_command(client, message):
     else:
         await message.reply("الأذان مفعل بالفعل لهذه المجموعة.")
 
-@app.on_message(filters.command("تعطيل_الأذان") & filters.group)
+@app.on_message(filters.command("تعطيل الاذان", "") & filters.group)
 async def disable_prayer_times_command(client, message):
     chat_id = message.chat.id
     if chat_id in active_groups:
@@ -72,7 +72,5 @@ async def disable_prayer_times_command(client, message):
     else:
         await message.reply("الأذان معطل بالفعل لهذه المجموعة.")
 
-@app.on_startup
-async def on_startup():
-    await play_prayer_times()
+asyncio.create_task(play_prayer_times())
 
