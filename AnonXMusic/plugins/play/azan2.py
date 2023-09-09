@@ -34,7 +34,6 @@ async def azan2():
     times_message += f"العصر: {prayer_times['Asr']}\n"
     times_message += f"المغرب: {prayer_times['Maghrib']}\n"
     times_message += f"العشاء: {prayer_times['Isha']}\n"
-    await times_message
 
 async def azan(message):
 
