@@ -36,6 +36,7 @@ async def play_prayer_times():
         method = 4  
         school = 0  
         prayer_times = get_prayer_times(address, method, school)
+        print(prayer_times)
         for prayer_name, prayer_time in prayer_times.items():
             if prayer_name.lower() in ["fajr", "dhuhr", "asr", "maghrib", "isha"]:
                 prayer_time_obj = datetime.strptime(prayer_time, "%H:%M")
@@ -52,7 +53,7 @@ async def play_prayer_times():
                             await app.send_message(f"ارسل الامر تاني في مشكله في سيرفر التلجرام")
                         except AlreadyJoinedError:
                             pass
-        await asyncio.sleep(300)
+        await asyncio.sleep(30)
 
 @app.on_message(filters.command("تفعيل الاذان", "") & filters.group)
 async def enable_prayer_times_command(client, message):
