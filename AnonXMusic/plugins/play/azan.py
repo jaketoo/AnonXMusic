@@ -98,7 +98,6 @@ async def send_prayer_alerts():
         if prayer:
             await stop_streams()
             for i in chat:
-                await app.send_sticker(i, "https://t.me/CR_HELP/10")
                 await app.send_message(i, f"حان الآن وقت أذان {prayer}")
                 await play_azan(i)
             await asyncio.sleep(174)
