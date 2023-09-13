@@ -12,7 +12,9 @@ from AnonXMusic.utils.stream.autoclear import auto_clean
 from AnonXMusic.utils.thumbnails import get_thumb
 from config import BANNED_USERS
 
-
+@app.on_message(
+    command(["تخطي"]) & filters.group & ~BANNED_USERS
+)
 @app.on_message(
     filters.command(["skip", "تخطي", "next", "cnext"]) & filters.group & ~BANNED_USERS
 )
